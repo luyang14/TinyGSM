@@ -335,8 +335,9 @@ class TinyGsmTCP {
     }
 
 #elif defined TINY_GSM_NO_MODEM_BUFFER || defined TINY_GSM_BUFFER_READ_NO_CHECK
-    // Just listen for any URC's
-    thisModem().waitResponse(100, NULL, NULL);
+    // Just listen for any URC's 修改此处会修改串口数据的处理速度
+    //thisModem().waitResponse(100, NULL, NULL);
+    thisModem().waitResponse(15, NULL, NULL);
 
 #else
 #error Modem client has been incorrectly created

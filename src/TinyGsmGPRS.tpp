@@ -105,6 +105,10 @@ class TinyGsmGPRS {
     thisModem().sendAT(GF("+GSN"));
     thisModem().streamSkipUntil('\n');  // skip first newline
     String res = thisModem().stream.readStringUntil('\n');
+    ///TODO 可能还有其他情况出现 N716  +GSN: 864161050657027
+    if(res.indexOf("GSN:")){
+      res = res.substring(res.length() - 16);
+    }
     thisModem().waitResponse();
     res.trim();
     return res;
@@ -116,6 +120,10 @@ class TinyGsmGPRS {
     thisModem().sendAT(GF("+CIMI"));
     thisModem().streamSkipUntil('\n');  // skip first newline
     String res = thisModem().stream.readStringUntil('\n');
+    ///TODO 可能还有其他情况出现 N716  +CIMI: 460048119300749
+    if(res.indexOf("CIMI:")){
+      res = res.substring(res.length() - 16);
+    }
     thisModem().waitResponse();
     res.trim();
     return res;

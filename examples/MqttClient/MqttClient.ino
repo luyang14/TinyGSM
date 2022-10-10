@@ -23,7 +23,7 @@
  **************************************************************/
 
 // Select your modem:
-#define TINY_GSM_MODEM_SIM800
+//#define TINY_GSM_MODEM_SIM800
 // #define TINY_GSM_MODEM_SIM808
 // #define TINY_GSM_MODEM_SIM868
 // #define TINY_GSM_MODEM_SIM900
@@ -36,6 +36,7 @@
 // #define TINY_GSM_MODEM_SARAR4
 // #define TINY_GSM_MODEM_M95
 // #define TINY_GSM_MODEM_BG96
+#define TINY_GSM_MODEM_EC20X
 // #define TINY_GSM_MODEM_A6
 // #define TINY_GSM_MODEM_A7
 // #define TINY_GSM_MODEM_M590
